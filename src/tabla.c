@@ -19,6 +19,7 @@ void inicia_tt(struct tabla_tipos * tabla){
 void push_pila(struct pila_t_simb * pila, struct tabla_simb * tabla){
 	list_push_front(pila->pila,&(tabla->elem));
 }
+
 // obtiene un elemento tabla de simbolos a la pila de tabla de simbolos especificada 
 struct tabla_simb * pop_pila(struct pila_t_simb * pila){
 	struct list_elem * e = list_pop_front(pila->pila);
@@ -109,6 +110,14 @@ void free_ts(struct list * lista){
     	free(f);
     }
 }
+//Obtiene la ultima direccion del ultimo renglon de la tabla de simbolos
+long obten_ultdir_ts(struct tabla_simb * tabla){
+    struct list_elem * e = list_pop_front(tabla->ren);
+    struct ren_simb * r = list_entry(e, struct ren_simb, elem);
+    list_push_front(tabla->ren,&r->elem);
+    return r->dir;
+}
+
 /*
 int main(){
 	return 0;

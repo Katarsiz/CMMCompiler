@@ -46,6 +46,7 @@ void agrega_tabla_simb(struct tabla_simb *, struct ren_simb *);
 void agrega_tabla_tipos(struct tabla_tipos *, struct ren_tipos *);
 int existe_en_ts(struct tabla_simb *, char *);
 int existe_en_tt(struct tabla_tipos *, char *);
+long obten_ultdir_ts(struct tabla_simb * tabla);
 struct ren_simb * obten_ren_ts(struct tabla_simb *, char *);
 struct ren_tipos * obten_ren_tt(struct tabla_tipos *, char *);
 void free_ts(struct list *);
